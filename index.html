@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الطقس</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> تطبيق الطقس</h1>
+        </header>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="ادخل اسم المدينة...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <button id="locationBtn" class="location-btn">
+                <i class="fas fa-map-marker-alt"></i> موقعي الحالي
+            </button>
+        </div>
+
+        <div class="weather-container" id="weatherContainer">
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>جاري تحميل بيانات الطقس...</p>
+            </div>
+
+            <div class="weather-card" id="weatherCard" style="display: none;">
+                <div class="current-weather">
+                    <div class="weather-info">
+                        <h2 id="cityName">المدينة</h2>
+                        <p id="weatherDate">التاريخ</p>
+                        <div class="temperature">
+                            <span id="temperature">--°</span>
+                            <div class="weather-icon">
+                                <i id="weatherIcon" class="fas fa-sun"></i>
+                            </div>
+                        </div>
+                        <p id="weatherDescription">وصف الطقس</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span>الرؤية</span>
+                        <span id="visibility">-- كم</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span>الرطوبة</span>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span>سرعة الرياح</span>
+                        <span id="windSpeed">-- كم/س</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span>الإحساس بـ</span>
+                        <span id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <span>الضغط الجوي</span>
+                        <span id="pressure">-- هكتوباسكال</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>مؤشر الأشعة فوق البنفسجية</span>
+                        <span id="uvIndex">--</span>
+                    </div>
+                </div>
+
+                <div class="forecast-container">
+                    <h3>توقعات الأيام القادمة</h3>
+                    <div class="forecast-list" id="forecastList">
+                        <!-- Forecast items will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>عذراً، لم نتمكن من العثور على بيانات الطقس لهذه المدينة</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
